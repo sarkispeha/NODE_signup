@@ -6,15 +6,11 @@ app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 
 app.get('/', function(req, res) {
-	fs.readFile('data.txt', function(err, data){
-		res.header('Content-Type', 'text/html');
-		res.send(data);
-	})
-});
+	res.render('index');
+	});
 
 app.post('/formsubmit', function(req, res) {
 	res.redirect('/success');
-	res.send(req.body);
 	console.log(req.body);
 	// fs.readFile('', function(err, data){	
 	// })
